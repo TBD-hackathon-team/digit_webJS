@@ -399,7 +399,7 @@ var jsonNewsDates= {
          },
          {
           "Title": "Royal Caribbean evacuates thousands from San Juan and the Caribbean",
-          "Date": "9/28/2017",
+          "Date": "01/28/2017",
           "Url": "http://money.cnn.com/2017/09/28/news/royal-caribbean-san-juan-evacuations/index.html"
          }
         ]
@@ -419,8 +419,14 @@ function financialInformation(){
 function newsJanArticle()
 { 
     
-$.each(jsonNews.Headlines,function(i, item){  
-    $('#newsJan').append('<tr><td><a href="'+ item.Url +'">'+item.Title+' </td></tr>');       
+    
+$.each(jsonNewsDates.Headlines,function(i, item){ 
+   var date = JSON.stringify(item.Date);
+   var month = date.substring(1,3);  
+ if(month=="9/"){
+    $('#newsJan').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+         
 })
    /* var headline = $("<div>").append($("<a href="+jsonNews.Headlines[0].Url+">").text(jsonNews.Headlines[0].Title));
     $("#newsJan").append(headline); */
