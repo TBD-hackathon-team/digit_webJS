@@ -354,42 +354,42 @@ var jsonNewsDates= {
          
          {
           "Title": "25th Anniversary Canadian Grand Prix New Product Awards Now Accepting Entries",
-          "Date": "9/28/2017",
+          "Date": "4/28/2017",
           "Url": "http://www.newswire.ca/en/releases/archive/September2017/28/c1726.html"
          },
          {
           "Title": "Comtech Telecommunications Corp. (CMTL)  Shares Down 17.4%",
-          "Date": "9/28/2017",
+          "Date": "7/28/2017",
           "Url": "https://zolmax.com/investing/comtech-telecommunications-corp-cmtl-shares-down-17-4/1675613.html"
          },
          {
           "Title": "Blackrock Maryland Municipal Bond Trust (BZM) Given News Impact Rating of 0.24",
-          "Date": "9/28/2017",
+          "Date": "6/28/2017",
           "Url": "https://zolmax.com/investing/blackrock-maryland-municipal-bond-trust-bzm-given-news-impact-rating-of-0-24/1675610.html"
          },
          {
           "Title": "PRESS DIGEST- Financial Times - Sept 28",
-          "Date": "9/28/2017",
+          "Date": "6/28/2017",
           "Url": "http://www.reuters.com/article/britain-press-ft/press-digest-financial-times-sept-28-idUSL4N1M96BD?feedType=RSS&feedName=companyNews"
          },
          {
           "Title": "Trump health secretary to repay cost of private jet travel",
-          "Date": "9/28/2017",
+          "Date": "5/28/2017",
           "Url": "http://www.reuters.com/article/us-usa-trump-expenses/trump-health-secretary-to-repay-cost-of-private-jet-travel-idUSKCN1C32WH?feedType=RSS&feedName=topNews"
          },
          {
           "Title": "Contrasting Mercury Systems (MRCY) & Raytheon (RTN)",
-          "Date": "9/28/2017",
+          "Date": "3/28/2017",
           "Url": "https://zolmax.com/investing/contrasting-mercury-systems-mrcy-raytheon-rtn/1675600.html"
          },
          {
           "Title": "Brief on the Morneau reform - Passive income",
-          "Date": "9/28/2017",
+          "Date": "2/28/2017",
           "Url": "http://www.newswire.ca/en/releases/archive/September2017/28/c5988.html"
          },
          {
           "Title": "Bitcoin fund pulls listing plan after hitting SEC roadblock",
-          "Date": "9/28/2017",
+          "Date": "2/28/2017",
           "Url": "https://www.ft.com/content/ace852ae-a486-11e7-9e4f-7f5e6a7c98a2"
          },
          {
@@ -399,9 +399,24 @@ var jsonNewsDates= {
          },
          {
           "Title": "Royal Caribbean evacuates thousands from San Juan and the Caribbean",
-          "Date": "01/28/2017",
+          "Date": "1/28/2017",
           "Url": "http://money.cnn.com/2017/09/28/news/royal-caribbean-san-juan-evacuations/index.html"
-         }
+         },
+         {
+            "Title": "Royal Caribbean evacuates thousands from San Juan and the Caribbean",
+            "Date": "8/28/2017",
+            "Url": "http://money.cnn.com/2017/09/28/news/royal-caribbean-san-juan-evacuations/index.html"
+           },
+           {
+            "Title": "Royal Caribbean evacuates thousands from San Juan and the Caribbean",
+            "Date": "9/28/2017",
+            "Url": "http://money.cnn.com/2017/09/28/news/royal-caribbean-san-juan-evacuations/index.html"
+           },
+           {
+            "Title": "Royal Caribbean evacuates thousands from San Juan and the Caribbean",
+            "Date": "5/28/2017",
+            "Url": "http://money.cnn.com/2017/09/28/news/royal-caribbean-san-juan-evacuations/index.html"
+           }
         ]
 }
 function financialInformation(){
@@ -423,10 +438,39 @@ function newsJanArticle()
 $.each(jsonNewsDates.Headlines,function(i, item){ 
    var date = JSON.stringify(item.Date);
    var month = date.substring(1,3);  
- if(month=="9/"){
+ 
+ if(month=="1/"){
     $('#newsJan').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
  }
+ if(month=="2/"){
+    $('#newsFeb').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+ if(month=="3/"){
+    $('#newsMar').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+ if(month=="4/"){
+    $('#newsApr').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+
+ if(month=="5/"){
+    $('#newsMay').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+
+ if(month=="6/"){
+    $('#newsJun').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+
+ if(month=="7/"){
+    $('#newsJul').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
+
+ if(month=="8/"){
+    $('#newsAug').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
          
+ if(month=="9/"){
+    $('#newsSep').append('<tr><td><a href="'+ item.Url +'">'+item.Title + '<br />'+ item.Date+' </td></tr>');  
+ }
 })
    /* var headline = $("<div>").append($("<a href="+jsonNews.Headlines[0].Url+">").text(jsonNews.Headlines[0].Title));
     $("#newsJan").append(headline); */
