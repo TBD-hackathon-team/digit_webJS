@@ -61,7 +61,7 @@ var jsonDataToday = {
 function bitcoinInformation(){
     var dateToday= $("<div>").append($("<div>").text("Date: " + jsonDataToday.Date));
     var dataToday= $("<div>").append($("<div>").text("1 "+jsonDataToday.FromCurrencySymbol + " to " +jsonDataToday.ToCurrencySymbol +": " + jsonDataToday.Rate));
-    $('#today').append(dateToday, dataToday);
+    $('#today').append(dateToday, dataToday,'<img src="http://www.cringely.com/wp-content/uploads/2013/09/bitcoin-logo-3d.jpg">');
 
     var date= $("<div>").append($("<div>").text("Date: " + jsonDataJanuary.Date));
     var data= $("<div>").append($("<div>").text("1 "+jsonDataJanuary.FromCurrencySymbol + " to " +jsonDataJanuary.ToCurrencySymbol +": " + jsonDataJanuary.Rate));
@@ -77,5 +77,5 @@ $(document).ready(function(){
     $(".nav-tabs a").click(function(){
         $(this).tab('show');
     });
-    $(".nav-tabs #today").click();
+    $(".nav-tabs a").first().tab('show');
 });
