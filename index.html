@@ -1,35 +1,58 @@
-<html lang="en"><head>
-    
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-     
-    
-        <title>Welcome to the DigIt Application!</title>
-    
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        
-    
-        <!-- Custom styles for this template -->
-        <link href="css/scrolling-nav.css" rel="stylesheet">
-        <style>
-            .nav-tabs>li:hover{
-               background-color:#50ffee;
-           }
-  
-              .nav-tabs>li>a{
-          padding: 8px 16px;
-           }
-      
-      </style>
-      </head>
-    
-      <body id="page-top" onload="bitcoinInformation()">
-    
-      
-      <!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Welcome to the DigIt Application!</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+  <style>
+    .nav-tabs {
+      background-color: white;
+    }
+
+    .nav-tabs>li:hover {
+      background-color: #50ffee;
+    }
+
+    .nav-tabs>li>a {
+      padding: 4px 10px;
+    }
+
+    .tab-content {
+      margin: 20px auto;
+      text-align: center;
+      width: 320px;
+      font-size: 150%;
+      border-radius: 10px;
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 50px;
+      padding-left: 80px;
+      background-color: white;
+      text-align: left;
+    }
+
+    body {
+      background-color: #007bff;
+    }
+  </style>
+</head>
+
+<body id="page-top" onload="bitcoinInformation()">
+
+
+  <!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
           <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,69 +73,92 @@
             </div>
           </div>
         </nav> -->
-    
-        <header class="bg-primary text-white">
-          <div class="container text-center">
-            <h1>Welcome to the DigIt Application!</h1>
-            <p class="lead">An application to help you with all of your trading neads...</p>
-          </div>
-        </header>
-    
-        <div class="container">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#today">Today</a></li>
-              <li><a href="#jan">January</a></li>
-              <li><a href="#feb">February</a></li>
-              <li><a href="#mar">March</a></li>
-              <li><a href="#apr">April</a></li>
-              <li><a href="#may">May</a></li>
-              <li><a href="#jun">June</a></li>
-            </ul>
-          
-            <div class="tab-content">
-              <div id="today" class="tab-pane fade in active">
-                <h3>Current Bitcoin Information: </h3>
-              </div>
-              <div id="jan" class="tab-pane fade">
-                <h3>January</h3>
-              </div>
-              <div id="feb" class="tab-pane fade">
-                <h3>February</h3>
-              </div>
-              <div id="mar" class="tab-pane fade">
-                <h3>March</h3>
-              </div>
-              <div id="apr" class="tab-pane fade">
-                <h3>April</h3>
-              </div>
-              <div id="may" class="tab-pane fade">
-                <h3>May</h3>
-              </div>
-              <div id="jun" class="tab-pane fade">
-                <h3>June</h3>
-              </div>
-              <div id="jul" class="tab-pane fade">
-                <h3>July</h3>
-              </div>
-              <div id="aug" class="tab-pane fade">
-                <h3>August</h3>
-              </div>
-              <div id="sept" class="tab-pane fade">
-                <h3>September</h3>
-              </div>
-              <div id="oct" class="tab-pane fade">
-                <h3>October</h3>
-              </div>
-              <div id="nov" class="tab-pane fade">
-                <h3>November</h3>
-              </div>
-              <div id="dec" class="tab-pane fade">
-                <h3>December</h3>
-              </div>
-            </div>
-          </div>
-     
-       <!-- <section id="about">
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Welcome to the DigIt Application!</h1>
+      <p class="lead">An application to help you with all of your trading needs...</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#today">Today</a>
+      </li>
+      <li>
+        <a href="#jan">January</a>
+      </li>
+      <li>
+        <a href="#feb">February</a>
+      </li>
+      <li>
+        <a href="#mar">March</a>
+      </li>
+      <li>
+        <a href="#apr">April</a>
+      </li>
+      <li>
+        <a href="#may">May</a>
+      </li>
+      <li>
+        <a href="#jun">June</a>
+      </li>
+      <li>
+        <a href="#jul">July</a>
+      </li>
+      <li>
+        <a href="#aug">August</a>
+      </li>
+      <li>
+        <a href="#sep">September</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="today" class="tab-pane fade in active">
+        <h3>Current Bitcoin Information: </h3>
+      </div>
+      <div id="jan" class="tab-pane fade">
+        <h3>January</h3>
+      </div>
+      <div id="feb" class="tab-pane fade">
+        <h3>February</h3>
+      </div>
+      <div id="mar" class="tab-pane fade">
+        <h3>March</h3>
+      </div>
+      <div id="apr" class="tab-pane fade">
+        <h3>April</h3>
+      </div>
+      <div id="may" class="tab-pane fade">
+        <h3>May</h3>
+      </div>
+      <div id="jun" class="tab-pane fade">
+        <h3>June</h3>
+      </div>
+      <div id="jul" class="tab-pane fade">
+        <h3>July</h3>
+      </div>
+      <div id="aug" class="tab-pane fade">
+        <h3>August</h3>
+      </div>
+      <div id="sept" class="tab-pane fade">
+        <h3>September</h3>
+      </div>
+      <div id="oct" class="tab-pane fade">
+        <h3>October</h3>
+      </div>
+      <div id="nov" class="tab-pane fade">
+        <h3>November</h3>
+      </div>
+      <div id="dec" class="tab-pane fade">
+        <h3>December</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- <section id="about">
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
@@ -128,30 +174,32 @@
             </div>
           </div>
         </section> -->
-   
-    
-        <!-- Footer -->
-        <footer class="py-5 bg-dark">
-          <div class="container">
-            <p class="m-0 text-center text-white">Copyright © Your Website 2017</p>
-          </div>
-          <!-- /.container -->
-        </footer>
-    
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        
-    
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    
-        <!-- Custom JavaScript for this theme -->
-        <script src="js/scrolling-nav.js"></script>
 
-        <script src="js/index.js"></script>
-    
-      
-    
-    
-    </body></html>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright © Your Website 2017</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+  <script src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
