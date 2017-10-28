@@ -164,7 +164,7 @@ $(document).ready(function () {
         });
 
         $.ajax({ // ajax call starts
-            url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=1/31/2017&EndDate=2/01/2017',
+            url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=1/29/2017&EndDate=01/30/2017',
             dataType:'json',
         })
             .done(function (data) { // Variable data contains the data we get from serverside
@@ -194,7 +194,7 @@ $(document).ready(function () {
 
               
        $.ajax({ // ajax call starts
-        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=04/05/2017&EndDate=4/09/2017',
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=04/05/2017&EndDate=4/06/2017',
         dataType:'json',
     })
         .done(function (data) { // Variable data contains the data we get from serverside
@@ -204,7 +204,7 @@ $(document).ready(function () {
 
               
        $.ajax({ // ajax call starts
-        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=05/05/2017&EndDate=5/08/2017',
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=05/05/2017&EndDate=5/06/2017',
         dataType:'json',
     })
         .done(function (data) { // Variable data contains the data we get from serverside
@@ -257,7 +257,16 @@ $(document).ready(function () {
     });
     $(".nav-tabs a").first().tab('show');
 
+    /*$.on('click',function(){
+        $.get('https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/subscribe?phoneNumber=1'+$('#phone').val()).success(function(){
+
+        })
+    })*/
+$("#register").bind("click", function(e){
+    alert('you clicke me')
+    $.get('https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/subscribe?phoneNumber=1'+$('#phone').val()).success(function(){
+    })     
+});
     
 });
-
 
