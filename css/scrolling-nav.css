@@ -17,3 +17,11 @@ header {
 section {
   padding: 150px 0;
 }
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.Fonts{
+	font-family: 'Montserrat:300', sans-serif;
+}

@@ -217,4 +217,8 @@ $(document).ready(function () {
     $(".nav-tabs a").first().tab('show');
 });
 
+$('.carousel').carousel({
+  interval: 3000
+})
+
 
