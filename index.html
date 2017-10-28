@@ -26,62 +26,64 @@
     }
 
     .nav-tabs>li>a {
-      padding: 10px 22px;
-      color: 	#006600;
+      padding: 6px 8px;
+      color: #006600;
     }
 
     .tab-content {
       margin: 20px auto;
       text-align: center;
-      width: 320px;
+      width: 75%px;
       font-size: 150%;
       border-radius: 10px;
       padding-left: 30px;
       background-color: #007bff;
       text-align: left;
-      color: white; 
+      color: white;
+    }
+    .alerts{
+      margin: 20px auto;
+      text-align: center;
+      width: 30%;
+      font-size: 150%;
+      border-radius: 10px;
+      padding-left: 30px;
+      background-color: #007bff;
+      text-align: left;
+      color: white;
+      padding-bottom: 10px;
+      padding-top: 10px; 
     }
 
-    
-/*
+    about{
+      background-color: white; 
+    }
+
+    /*
  body {
   background-color: #007bff;
     }
 */
-    .tab-pane>img
-      { 
-        width:120px;
-        height:auto;
-        padding:10px; 
-        margin:auto
-      }
+
+    .tab-pane>img {
+      width: 120px;
+      height: auto;
+      padding: 10px;
+      margin: auto
+    }
+
+    a {
+      margin-bottom: 0.5rem;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.2;
+      color: inherit;
+      font-size: 2rem;
+    }
   </style>
 </head>
 
-<body id="page-top" onload="bitcoinInformation()">
-
-
-  <!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav> -->
+<body id="page-top" onload="mainDriver()">
 
   <header class="bg-primary text-white">
     <div class="container text-center">
@@ -126,10 +128,22 @@
 
     <div class="tab-content">
       <div id="today" class="tab-pane fade in active">
-        <h3>Current Bitcoin Information: </h3>
+        <h3>Current Financial Information: </h3>
       </div>
       <div id="jan" class="tab-pane fade">
-        <h3>January</h3>
+        <div id="janFin">
+          <h3>January</h3>
+        </div>
+
+        <section id="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div id="newsJan"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <div id="feb" class="tab-pane fade">
         <h3>February</h3>
@@ -167,28 +181,24 @@
     </div>
   </div>
 
-  <!-- <section id="about">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <h2>About this page</h2>
-                <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
-                <ul>
-                  <li>Clickable nav links that smooth scroll to page sections</li>
-                  <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                  <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                  <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section> -->
-
+<div class="alerts">
+  <form class="form" method="post" action="#">
+    <h2>Sign up for alerts!</h2>
+    <label>Name :</label>
+    <input type="text" name="dname" id="name">
+    <br />
+    <label>Phone number :</label>
+    <input type="text" name="dphone" id="phone">
+    <br />
+    <br />
+    <input type="button" name="register" id="register" value="Register">
+    </form>
+</div>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright © T. Rowe Price</p>
+      <p class="m-0 text-center text-white">Team TBD © T. Rowe Price</p>
     </div>
     <!-- /.container -->
   </footer>
