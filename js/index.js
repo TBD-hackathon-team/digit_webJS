@@ -65,9 +65,9 @@ var jsonDataJanuary = {
 function financialInformation(financialResults) {
 
     //var jsonDataFinancial=financialResults;
-    var dateToday = $("<div>").append($("<div>").text("Date: " + jsonDataToday.Date));
-    var dataToday = $("<div>").append($("<div>").text("1 " + jsonDataToday.FromCurrencySymbol + " to " + jsonDataToday.ToCurrencySymbol + ": " + jsonDataToday.Rate));
-    $('#today').append(dateToday, dataToday);//,'<img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG3.png?i=1">');
+   // var dateToday = $("<div>").append($("<div>").text("Date: " + jsonDataToday.Date));
+    //var dataToday = $("<div>").append($("<div>").text("1 " + jsonDataToday.FromCurrencySymbol + " to " + jsonDataToday.ToCurrencySymbol + ": " + jsonDataToday.Rate));
+    //$('#today').append(dateToday, dataToday);//,'<img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG3.png?i=1">');
 
     // var date= $("<div>").append($("<div>").text("Date: " + jsonDataJanuary.Date));
     //  var data= $("<div>").append($("<div>").text("1 "+jsonDataJanuary.FromCurrencySymbol + " to " +jsonDataJanuary.ToCurrencySymbol +": " + jsonDataJanuary.Rate));
@@ -84,7 +84,7 @@ function financialInformation(financialResults) {
 
             var finDate = $("<div>").append($("<div>").text("Date: " + item.EndDate));
             var data = $("<div>").append($("<div>").text("1 " + item.BaseCurrency + " to " + item.QuoteCurrency + ": " + item.Average));
-            if (month == "01/01") {
+            if (month == "01/02") {
                 $('#janFin').append(finDate, data)
             }
             if (month == "02/01") {
@@ -116,6 +116,10 @@ function financialInformation(financialResults) {
             }
             if (month == "09/01") {
                 $('#sepFin').append(finDate, data)
+
+            } 
+            if (month == "10/01") {
+                $('#today').append(finDate, data)
 
             } 
  
@@ -167,6 +171,9 @@ function newsJanArticle(headlines) {
      $("#newsJan").append(headline); */
 }
 
+var janJson;
+var febJson;
+var marJson;
 
 
 function mainDriver() {
@@ -175,14 +182,14 @@ function mainDriver() {
     // newsJanArticle();
 }
 $(document).ready(function () {
-    $.ajax({ // ajax call starts
+   /* $.ajax({ // ajax call starts
         url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines', // JQuery loads serverside.php
         dataType: 'json', // Choosing a JSON datatype
     })
         .done(function (data) { // Variable data contains the data we get from serverside
             newsJanArticle(data) // Clear #wines div
 
-        });
+        });*/
     $.ajax({ // ajax call starts
         url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/stockinfo', // JQuery loads serverside.php
         dataType: 'json', // Choosing a JSON datatype
@@ -191,8 +198,23 @@ $(document).ready(function () {
             financialInformation(data) 
         
         });
+
+        $.ajax({ // ajax call starts
+            type: 'POST',
+            url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines',
+            data:  "StartDate=1/31/2017&EndDate=2/01/2017",
+            dataType:'json',
+        })
+            .done(function (data) { // Variable data contains the data we get from serverside
+                newsJanArticle(data) // Clear #wines div
+    
+            });
+
+    
     $(".nav-tabs a").click(function () {
         $(this).tab('show');
     });
     $(".nav-tabs a").first().tab('show');
 });
+
+
