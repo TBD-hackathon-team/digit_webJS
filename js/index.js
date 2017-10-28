@@ -13,7 +13,8 @@ $(document).ready(function(){
 function lambdaConnect(){
     $.ajax({
         url: "https://l3k4n5rrs9.execute-api.us-east-2.amazonaws.com/prod/DigIt-Serenity",
-        dataType: 'jsonp',
+        dataType: 'json',
+        headers: {"Access-Control-Allow-Origin":"*"},
         success: function(results){
             console.log(results);
         }
