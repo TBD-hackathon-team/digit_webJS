@@ -57,6 +57,57 @@ var jsonDataToday = {
     "Rate": 6423,
     "Source": "SIX Financial Information"
    };
+
+var jsonDataFinancial = {
+      "Currencies": [
+        {"Outcome": "Success",
+        "Message": null,
+        "Identity": "Request",
+        "Delay": 0.070943,
+        "FromCurrencySymbol": "BTC",
+        "FromCurrencyName": "Bitcoin",
+        "ToCurrencySymbol": "USD",
+        "ToCurrencyName": "United States dollar",
+        "Date": "01/30/2017",
+        "Time": "10:00:00 PM",
+        "Amount": 13420,
+        "Result": 8937000,
+        "Rate": 623,
+        "Source": "SIX Financial Information"
+      },{
+      "Outcome": "Success",
+      "Message": null,
+      "Identity": "Request",
+      "Delay": 0.070943,
+      "FromCurrencySymbol": "BTC",
+      "FromCurrencyName": "Bitcoin",
+      "ToCurrencySymbol": "USD",
+      "ToCurrencyName": "United States dollar",
+      "Date": "02/30/2017",
+      "Time": "10:00:00 PM",
+      "Amount": 1500,
+      "Result": 8937000,
+      "Rate": 6563,
+      "Source": "SIX Financial Information"
+      },
+      {
+        "Outcome": "Success",
+        "Message": null,
+        "Identity": "Request",
+        "Delay": 0.070943,
+        "FromCurrencySymbol": "BTC",
+        "FromCurrencyName": "Bitcoin",
+        "ToCurrencySymbol": "USD",
+        "ToCurrencyName": "United States dollar",
+        "Date": "03/30/2017",
+        "Time": "10:00:00 PM",
+        "Amount": 1500,
+        "Result": 8937000,
+        "Rate": 1443,
+        "Source": "SIX Financial Information"
+        }
+       ]
+   }
 var jsonNews = {
     
         "Headlines": [
@@ -420,13 +471,55 @@ var jsonNewsDates= {
         ]
 }
 function financialInformation(){
-    var dateToday= $("<div>").append($("<div>").text("Date: " + jsonDataToday.Date));
-    var dataToday= $("<div>").append($("<div>").text("1 "+jsonDataToday.FromCurrencySymbol + " to " +jsonDataToday.ToCurrencySymbol +": " + jsonDataToday.Rate));
+   var dateToday= $("<div>").append($("<div>").text("Date: " + jsonDataToday.Date));
+   var dataToday= $("<div>").append($("<div>").text("1 "+jsonDataToday.FromCurrencySymbol + " to " +jsonDataToday.ToCurrencySymbol +": " + jsonDataToday.Rate));
     $('#today').append(dateToday, dataToday);//,'<img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG3.png?i=1">');
 
-    var date= $("<div>").append($("<div>").text("Date: " + jsonDataJanuary.Date));
-    var data= $("<div>").append($("<div>").text("1 "+jsonDataJanuary.FromCurrencySymbol + " to " +jsonDataJanuary.ToCurrencySymbol +": " + jsonDataJanuary.Rate));
-    $('#janFin').append(date, data);//,'<img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG3.png?i=1">');
+   // var date= $("<div>").append($("<div>").text("Date: " + jsonDataJanuary.Date));
+  //  var data= $("<div>").append($("<div>").text("1 "+jsonDataJanuary.FromCurrencySymbol + " to " +jsonDataJanuary.ToCurrencySymbol +": " + jsonDataJanuary.Rate));
+   // $('#janFin').append(date, data);//,'<img src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG3.png?i=1">');
+
+    $.each(jsonDataFinancial.Currencies,function(i, item){ 
+        var date = JSON.stringify(item.Date);
+        var month = date.substring(1,3);  
+
+        var finDate=$("<div>").append($("<div>").text("Date: " + item.Date));
+        var data= $("<div>").append($("<div>").text("1 "+item.FromCurrencySymbol + " to " +item.ToCurrencySymbol +": " + item.Rate));
+        if(month=="01"){
+            $('#janFin').append(finDate, data)
+         }
+         if(month=="02"){
+            $('#febFin').append(finDate, data)
+         }
+         if(month=="03"){
+            $('#marFin').append(finDate, data)
+     
+         }
+         if(month=="04"){
+            $('#aprFin').append(finDate, data)
+     
+         }
+         if(month=="05"){
+            $('#mayFin').append(finDate, data)
+     
+         }
+         if(month=="06"){
+            $('#junFin').append(finDate, data)
+     
+         }
+         if(month=="07"){
+            $('#julFin').append(finDate, data)
+     
+         }
+         if(month=="08"){
+            $('#augFin').append(finDate, data)
+     
+         }
+         if(month=="09"){
+            $('#sepFin').append(finDate, data)
+     
+         }
+     })
 
    
 }
