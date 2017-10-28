@@ -28,40 +28,6 @@ function lambdaConnect() {
 
 
 
-var jsonDataToday = {
-    "Outcome": "Success",
-    "Message": null,
-    "Identity": "Request",
-    "Delay": 0.070943,
-    "FromCurrencySymbol": "BTC",
-    "FromCurrencyName": "Bitcoin",
-    "ToCurrencySymbol": "USD",
-    "ToCurrencyName": "United States dollar",
-    "Date": "10/20/2017",
-    "Time": "10:00:00 PM",
-    "Amount": 1500,
-    "Result": 8937000,
-    "Rate": 5958,
-    "Source": "SIX Financial Information"
-};
-var jsonDataJanuary = {
-    "Outcome": "Success",
-    "Message": null,
-    "Identity": "Request",
-    "Delay": 0.070943,
-    "FromCurrencySymbol": "BTC",
-    "FromCurrencyName": "Bitcoin",
-    "ToCurrencySymbol": "USD",
-    "ToCurrencyName": "United States dollar",
-    "Date": "01/30/2017",
-    "Time": "10:00:00 PM",
-    "Amount": 1500,
-    "Result": 8937000,
-    "Rate": 6423,
-    "Source": "SIX Financial Information"
-};
-
-
 function financialInformation(financialResults) {
 
     //var jsonDataFinancial=financialResults;
@@ -127,8 +93,8 @@ function financialInformation(financialResults) {
 
 }
 
-function newsJanArticle(headlines) {
-    var jsonNewsDates = headlines;
+function newsJanArticle(data) {
+    var jsonNewsDates = data;
 
     $.each(jsonNewsDates.Headlines, function (i, item) {
         var date = JSON.stringify(item.Date);
@@ -171,18 +137,16 @@ function newsJanArticle(headlines) {
      $("#newsJan").append(headline); */
 }
 
-var janJson;
-var febJson;
-var marJson;
-
-
+var totalFinancialNews = {}; 
+var janNews; 
 function mainDriver() {
     //   lambdaConnect();
-    financialInformation();
-    // newsJanArticle();
+   // financialInformation();
+     
+
 }
 $(document).ready(function () {
-   /* $.ajax({ // ajax call starts
+   /*d $.ajax({ // ajax call starts
         url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines', // JQuery loads serverside.php
         dataType: 'json', // Choosing a JSON datatype
     })
@@ -200,21 +164,100 @@ $(document).ready(function () {
         });
 
         $.ajax({ // ajax call starts
-            type: 'POST',
-            url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines',
-            data:  "StartDate=1/31/2017&EndDate=2/01/2017",
+            url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=1/31/2017&EndDate=2/01/2017',
             dataType:'json',
         })
             .done(function (data) { // Variable data contains the data we get from serverside
-                newsJanArticle(data) // Clear #wines div
+                newsJanArticle(data);//newsJanArticle(data) 
     
             });
+
+            
+       $.ajax({ // ajax call starts
+            url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=03/01/2017&EndDate=3/02/2017',
+            dataType:'json',
+        })
+            .done(function (data) { // Variable data contains the data we get from serverside
+                newsJanArticle(data)//newsJanArticle(data) 
+    
+            }); 
+
+                  
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=02/05/2017&EndDate=2/07/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
+
+              
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=04/05/2017&EndDate=4/09/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
+
+              
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=05/05/2017&EndDate=5/08/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
+
+              
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=06/01/2017&EndDate=6/02/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
+
+              
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=07/01/2017&EndDate=7/02/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
+
+              
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=08/01/2017&EndDate=8/02/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
+              
+       $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines?StartDate=09/01/2017&EndDate=9/02/2017',
+        dataType:'json',
+    })
+        .done(function (data) { // Variable data contains the data we get from serverside
+            newsJanArticle(data)//newsJanArticle(data) 
+
+        }); 
 
     
     $(".nav-tabs a").click(function () {
         $(this).tab('show');
     });
     $(".nav-tabs a").first().tab('show');
+
+    
 });
 
 
