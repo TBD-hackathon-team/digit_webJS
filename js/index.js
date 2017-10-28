@@ -10,19 +10,22 @@ $(document).ready(function(){
         console.log(data);
     });
 });*/
+
+var lambdaReturn; 
+
 function lambdaConnect(){
     var json =null;
-
+    console.log("hello");
     $.ajax({
-        url: "https://globalnews.xignite.com/xGlobalNews.json/GetHistoricalMarketHeadlines?StartDate=9/28/2017&EndDate=9/29/2017&_fields=Headlines,Headlines.Title,Headlines.Url&_token=AE4A02E0271A4E77B78B314AEE9A132D",
+        url: "https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/headlines",
         dataType: 'json',
         success: function(results){
-            var parsed_result=JSON.parse(results);
-            $('#jan').text(JSON.stringify(results));
-            printJSON(results);
+            console.log("hello wordl");
+            lambdaReturn=results;
         }
     });
 }
+
 
 
 var jsonDataToday = {
@@ -524,9 +527,9 @@ function financialInformation(){
    
 }
 
-function newsJanArticle()
+function newsJanArticle(headlines)
 { 
-    
+    var jsonNewsDates=headlines; 
     
 $.each(jsonNewsDates.Headlines,function(i, item){ 
    var date = JSON.stringify(item.Date);
@@ -569,16 +572,23 @@ $.each(jsonNewsDates.Headlines,function(i, item){
     $("#newsJan").append(headline); */
 }
 
-function newsArray(){
 
-}
 
 function mainDriver(){
-  // lambdaConnect();
+//   lambdaConnect();
     financialInformation();
-    newsJanArticle();
+   // newsJanArticle();
 }
 $(document).ready(function(){
+    $.ajax({ // ajax call starts
+        url: 'https://gld7uor0li.execute-api.us-east-1.amazonaws.com/dev/stockinfo', // JQuery loads serverside.php
+        dataType: 'json', // Choosing a JSON datatype
+      })
+      .done(function(data) { // Variable data contains the data we get from serverside
+        newsJanArticle(data) // Clear #wines div
+        console.log(data);
+    
+      });
     $(".nav-tabs a").click(function(){
         $(this).tab('show');
     });
