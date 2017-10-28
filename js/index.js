@@ -25,7 +25,7 @@ function lambdaConnect(){
 }
 
 
-var jsonData = {
+var jsonDataToday = {
     "Outcome": "Success",
     "Message": null,
     "Identity": "Request",
@@ -41,11 +41,31 @@ var jsonData = {
     "Rate": 5958,
     "Source": "SIX Financial Information"
    };
+   var jsonDataJanuary = {
+    "Outcome": "Success",
+    "Message": null,
+    "Identity": "Request",
+    "Delay": 0.070943,
+    "FromCurrencySymbol": "BTC",
+    "FromCurrencyName": "Bitcoin",
+    "ToCurrencySymbol": "USD",
+    "ToCurrencyName": "United States dollar",
+    "Date": "01/30/2017",
+    "Time": "10:00:00 PM",
+    "Amount": 1500,
+    "Result": 8937000,
+    "Rate": 6423,
+    "Source": "SIX Financial Information"
+   };
 
-function tempJSONRead(){
-    var date= $("<div>").append($("<div>").text("Date: " + jsonData.Date));
-    var data= $("<div>").append($("<div>").text("1 "+jsonData.FromCurrencySymbol + " to " +jsonData.ToCurrencySymbol +": " + jsonData.Rate));
-    $('#today').append(date, data);
+function bitcoinInformation(){
+    var dateToday= $("<div>").append($("<div>").text("Date: " + jsonDataToday.Date));
+    var dataToday= $("<div>").append($("<div>").text("1 "+jsonDataToday.FromCurrencySymbol + " to " +jsonDataToday.ToCurrencySymbol +": " + jsonDataToday.Rate));
+    $('#today').append(dateToday, dataToday);
+
+    var date= $("<div>").append($("<div>").text("Date: " + jsonDataJanuary.Date));
+    var data= $("<div>").append($("<div>").text("1 "+jsonDataJanuary.FromCurrencySymbol + " to " +jsonDataJanuary.ToCurrencySymbol +": " + jsonDataJanuary.Rate));
+    $('#jan').append(date, data);
 }
 
 function printJSON(results){
@@ -57,6 +77,4 @@ $(document).ready(function(){
     $(".nav-tabs a").click(function(){
         $(this).tab('show');
     });
-
-    $('#jan').text("this is unique text for january weee");
 });
